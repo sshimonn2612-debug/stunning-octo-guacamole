@@ -1,5 +1,7 @@
 ---
-
+import Navigation from '../components/navigation.astro';
+import "../styles/global.css";
+import Footer from '../components/Foote.astro';
 const pageTitle = "最初の記事";
 ---
 <html lang="en">
@@ -10,10 +12,10 @@ const pageTitle = "最初の記事";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-	</head><a href="/">メニュー</a>
-<a href="/about/">自己紹介</a>
-<a href="/blog/">最初の記事</a>
+	</head><Navigation />
+
     <body>
         <h1>{pageTitle}</h1>
         <p>これは私の最初の記事です。ここにコンテンツを追加します。</p>
-    </body>
+    <Footer /></body>
+    
