@@ -1,3 +1,17 @@
+---
+
+const pageTitle = "自己紹介";
+
+
+
+const identity = {firstName: "秀真", lastName: "下野", age: 20,
+  country: "日本",
+  occupation: "学生",
+  hobbies: ["野球", "競馬", "F1"],
+};
+
+
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -5,9 +19,19 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head></head><a href="/">メニュー</a>
-<a href="/about/">野球</a>
+<a href="/about/">自己紹介</a>
+<a href="/blog/">最初の記事</a>
 	<body>
-		<h1>プロ野球</h1>
-        <p>プロ野球についての情報がここに表示されます。</p>
+		<h1>{pageTitle}</h1>
+        <p>自己紹介ページです。<p>以下は私に関するいくつかの事実です。</p>
+<ul>
+  <li>私の名前は{identity.firstName}です。</li>
+  <li>{identity.country}に住んでおり、{identity.occupation}として働いています。</li>
+  {identity.hobbies.length >= 2 &&
+    <li>私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。</li>
+  }
+</ul>
+
+</ul></p>

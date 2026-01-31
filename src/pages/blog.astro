@@ -1,3 +1,7 @@
+---
+
+const pageTitle = "最初の記事";
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -5,6 +9,11 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head><a href="/">メニュー</a>
-<a href="/about/">野球</a>
+<a href="/about/">自己紹介</a>
+<a href="/blog/">最初の記事</a>
+    <body>
+        <h1>{pageTitle}</h1>
+        <p>これは私の最初の記事です。ここにコンテンツを追加します。</p>
+    </body>
