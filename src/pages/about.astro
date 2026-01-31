@@ -7,8 +7,13 @@ const pageTitle = "自己紹介";
 const identity = {firstName: "秀真", lastName: "下野", age: 20,
   country: "日本",
   occupation: "学生",
-  hobbies: ["野球", "競馬", "F1"],
-};
+  hobbies: ["野球", "競馬", "F1"],};
+const skills = ["野球の試合の分析", "馬券の購入", "ドキュメントの執筆"]
+const happy = true;
+const finished = false;
+const goal = 3;
+const skillColor = "crimson";
+
 
 
 ---
@@ -16,10 +21,22 @@ const identity = {firstName: "秀真", lastName: "下野", age: 20,
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{ skillColor }}>
+            h1 {
+                color: blue;
+                font-size: 4rem;
+            }
+            .skill{
+                color: var(--skillColor);
+                font-size: 2rem;}
+        </style>
+  
+      
+  
 	</head></head><a href="/">メニュー</a>
 <a href="/about/">自己紹介</a>
 <a href="/blog/">最初の記事</a>
@@ -33,5 +50,11 @@ const identity = {firstName: "秀真", lastName: "下野", age: 20,
     <li>私の2つの趣味は{identity.hobbies[0]}と{identity.hobbies[1]}です。</li>
   }
 </ul>
+<p>私のスキルは以下の通りです。 </p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>{happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
 
-</ul></p>
+{finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
+
+{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
