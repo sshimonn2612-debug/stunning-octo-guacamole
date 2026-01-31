@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/navigation.astro';
+
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 import Footer from '../components/Foote.astro';
 const pageTitle = "自己紹介";
@@ -43,8 +44,11 @@ const textCase = "uppercase";
   
       
   
-	</head></head><Navigation />
-	<Footer /><body>
+	</head></head><Header  />
+	<Footer />
+    <script>
+    import "../scripts/menu.js";
+  </script><body>
 		<h1>{pageTitle}</h1>
         <p>自己紹介ページです。<p>以下は私に関するいくつかの事実です。</p>
 <ul>
